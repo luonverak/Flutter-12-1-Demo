@@ -4,7 +4,7 @@ import 'package:demo3/model/category.dart';
 import 'package:demo3/widget/category.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_shadow/simple_shadow.dart';
-
+import 'package:badges/badges.dart' as badges;
 import '../widget/color_makeup.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -30,12 +30,12 @@ class HomeScreen extends StatelessWidget {
                 ),
                 child: ListView(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15, right: 15),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 15, right: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
+                          Text(
                             'Discover',
                             style: TextStyle(
                               fontSize: 35,
@@ -43,11 +43,12 @@ class HomeScreen extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.shopping_cart_checkout,
+                          badges.Badge(
+                            badgeContent: Text('3'),
+                            child: Icon(
+                              Icons.shopping_cart,
                               color: Colors.white,
+                              size: 30,
                             ),
                           )
                         ],
