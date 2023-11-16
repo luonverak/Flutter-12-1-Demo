@@ -3,6 +3,9 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:demo3/model/category.dart';
 import 'package:demo3/widget/category.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_shadow/simple_shadow.dart';
+
+import '../widget/color_makeup.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,7 +23,7 @@ class HomeScreen extends StatelessWidget {
                 width: double.infinity,
                 height: MediaQuery.sizeOf(context).height / 2.2,
                 decoration: const BoxDecoration(
-                  color: Colors.orange,
+                  color: makeup,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(320),
                   ),
@@ -76,8 +79,85 @@ class HomeScreen extends StatelessWidget {
                       Container(
                         width: 230,
                         decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
+                          border: Border.all(width: 1),
+                        ),
+                        child: SingleChildScrollView(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: double.infinity,
+                                  height: 180,
+                                  child: Center(
+                                    child: SimpleShadow(
+                                      opacity: 0.8,
+                                      color: Colors.blue,
+                                      sigma: 15,
+                                      child: Image.asset(
+                                        'asset/images/shoe2.webp',
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                const Text(
+                                  'Wagner\'s Shoes',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Lato',
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                const Text(
+                                  'Price 15.0\$',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontFamily: 'Lato',
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        color: Colors.black,
+                                      ),
+                                      child: const Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Icon(
+                                          Icons.favorite,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                        color: Colors.black,
+                                      ),
+                                      child: const Padding(
+                                        padding: EdgeInsets.all(5.0),
+                                        child: Icon(
+                                          Icons.shopping_cart,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ],
@@ -85,7 +165,7 @@ class HomeScreen extends StatelessWidget {
                       height: 300,
                       aspectRatio: 16 / 9,
                       viewportFraction: 0.8,
-                      initialPage: 0,
+                      initialPage: 3,
                       enableInfiniteScroll: true,
                       autoPlay: true,
                       autoPlayInterval: const Duration(seconds: 5),
@@ -131,7 +211,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
         color: Colors.blue,
-        buttonBackgroundColor: Colors.orange,
+        buttonBackgroundColor: makeup,
         backgroundColor: Colors.white,
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 600),

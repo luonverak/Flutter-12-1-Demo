@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
   curved_navigation_bar: ^1.0.3
+  drop_shadow_image: ^0.9.1
+  simple_shadow: ^0.3.1
 
 dev_dependencies:
   flutter_test:
@@ -61,9 +63,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - asset/images/
+    - asset/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -76,10 +78,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: font/Lato-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
