@@ -167,9 +167,9 @@ class HomeScreen extends StatelessWidget {
                         );
                       }),
                       options: CarouselOptions(
-                        height: 300,
+                        height: 290,
                         aspectRatio: 16 / 9,
-                        viewportFraction: 0.8,
+                        viewportFraction: 0.6,
                         initialPage: 3,
                         enableInfiniteScroll: true,
                         autoPlay: true,
@@ -210,7 +210,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 8,
                   mainAxisSpacing: 10,
-                  childAspectRatio: 1 / 1.75,
+                  childAspectRatio: 1 / 1.4,
                   children: List.generate(
                     listShoe.length,
                     (index) => shoeItem(
@@ -224,6 +224,7 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: CurvedNavigationBar(
+        height: 60,
         items: const [
           Icon(
             Icons.home,
@@ -277,7 +278,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               SizedBox(
                 width: double.infinity,
-                height: 180,
+                height: 150,
                 child: Center(
                   child: SimpleShadow(
                     opacity: 0.8,
@@ -292,7 +293,7 @@ class HomeScreen extends StatelessWidget {
               Text(
                 data.name,
                 style: const TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Lato',
                 ),
