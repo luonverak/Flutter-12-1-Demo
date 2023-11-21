@@ -215,7 +215,7 @@ class HomeScreen extends StatelessWidget {
                   children: List.generate(
                     listShoe.length,
                     (index) => shoeItem(
-                      context,
+                       context,
                       listShoe[index],
                     ),
                   ),
