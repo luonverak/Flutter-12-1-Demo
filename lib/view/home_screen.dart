@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:demo3/model/category.dart';
 import 'package:demo3/model/shoe_data.dart';
+import 'package:demo3/view/detail_screen.dart';
 import 'package:demo3/widget/category.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_shadow/simple_shadow.dart';
@@ -93,36 +94,54 @@ class HomeScreen extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(
-                                    width: double.infinity,
-                                    height: 180,
-                                    child: Center(
-                                      child: SimpleShadow(
-                                        opacity: 0.8,
-                                        color: listShoe[index].color,
-                                        sigma: 15,
-                                        child: Image.asset(
-                                          listShoe[index].image,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => DetailScreen(
+                                            data: listShoe[index],
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                  ),
-                                  Text(
-                                    listShoe[index].name,
-                                    style: const TextStyle(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Lato',
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(
-                                    'Price ${listShoe[index].price}\$',
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      fontFamily: 'Lato',
+                                      );
+                                    },
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          width: double.infinity,
+                                          height: 180,
+                                          child: Center(
+                                            child: SimpleShadow(
+                                              opacity: 0.8,
+                                              color: listShoe[index].color,
+                                              sigma: 15,
+                                              child: Image.asset(
+                                                listShoe[index].image,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          listShoe[index].name,
+                                          style: const TextStyle(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Lato',
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          'Price ${listShoe[index].price}\$',
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontFamily: 'Lato',
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                   Row(
@@ -215,7 +234,7 @@ class HomeScreen extends StatelessWidget {
                   children: List.generate(
                     listShoe.length,
                     (index) => shoeItem(
-                       context,
+                      context,
                       listShoe[index],
                     ),
                   ),
